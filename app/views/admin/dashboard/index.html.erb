@@ -1,0 +1,23 @@
+<div class="alert alert-success" role="alert"><%= notice %></div>
+
+<h1 class="dashboard-title" style="min-height: auto;">Administrace</h1>
+
+<section class="header-schedule" style="height: auto;" >
+  <div class="entities">
+    <div class="entity">
+      <h1 class="entity-title">Články</h1>
+      <p class="entity-text">Umožňuje správu článků...</p>
+      <p class="entity-count">Počet (<%= Article.count %>)</p>
+      <%= link_to 'ZOBRAZIT', admin_articles_path, class: 'entity-button' %>
+    </div>
+  </div>
+
+  <div class="entities">
+    <div class="entity">
+      <h1 class="entity-title">Události</h1>
+      <p class="entity-text">Umožňuje správu událostí...</p>
+      <p class="entity-count">Počet (<%= Event.count %>)</p>
+      <%= link_to 'ZOBRAZIT', admin_events_path, class: 'entity-button' %>
+    </div>
+  </div>
+</section>

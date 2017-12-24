@@ -1,6 +1,105 @@
-<h1>Articles</h1>
+<div class="introducion">
+  <img class="introducion-logo" src="http://fotbalhostivice.cz/lgo.png" width="20%"/>
+  <p class="introducion-text">OFICIÁLNÍ STRÁNKY <em>FOTBAL HOSTIVICE</em></p>
+  <a href="#event" id="event" class="introducion-button"><img class="introducion-button-icon" src="http://fotbalhostivice.cz/img/down.png"></a>
+</div>
 
-<% @articles.each do |item| %>
-  <p><%= item.title %></p>
-  <hr/>
-<% end %>
+
+<div class="items">
+  <div class="items-list">
+    <div class="items-list-news">
+      <h2>NOVINKY</h2>
+
+      <div id="sql">
+        <div id="loading-n" class="loader"></div>
+        <% @articles.each do |item| %>
+            <% if item.view == 'show' %>
+              <div class="items-list-news-note">
+                <%= link_to item.title, item, class: 'items-list-news-title' %>
+                <p class="items-list-news-label"><%= item.subtitle %></p>
+              </div>
+            <% end %>
+        <% end %>
+      </div>
+
+      <%= link_to 'ARCHIV NOVINEK', articles_path %>
+    </div>
+
+    <div id="events" class="items-list-events">
+      <h2>ZÁPASY</h2>
+      <div id="loading-e" class="loader"></div>
+      <% @events.each_with_index do |event, i| %>
+          <% if i == 0 %>
+              <div class="items-list-news-event-first">
+                <div class="items-list-events-date">
+                  <p>
+                    <%= event.date %>
+                    <em class="month"><%= event.time %></em>
+                  </p>
+                </div>
+
+                <div class="items-list-events-match">
+                  <div class="items-list-news-center">
+                    <%= image_tag(event.home, class: 'items-list-events-match-home', width: '20%') %>
+                    <p>vs</p>
+                    <%= image_tag(event.away, class: 'items-list-events-match-away', width: '20%') %>
+                  </div>
+                </div>
+              </div>
+          <% elsif i == @events.length-1 %>
+              <div class="items-list-news-event-last">
+                <div class="items-list-events-date">
+                  <p>
+                    <%= event.date %>
+                    <em class="month"><%= event.time %></em>
+                  </p>
+                </div>
+
+                <div class="items-list-events-match">
+                  <div class="items-list-news-center">
+                    <%= image_tag(event.home, class: 'items-list-events-match-home', width: '20%') %>
+                    <p>vs</p>
+                    <%= image_tag(event.away, class: 'items-list-events-match-away', width: '20%') %>
+                  </div>
+                </div>
+              </div>
+          <% else %>
+              <div class="items-list-news-event">
+                <div class="items-list-events-date">
+                  <p>
+                    <%= event.date %>
+                    <em class="month"><%= event.time %></em>
+                  </p>
+                </div>
+
+                <div class="items-list-events-match">
+                  <div class="items-list-news-center">
+                    <%= image_tag(event.home, class: 'items-list-events-match-home', width: '20%') %>
+                    <p>vs</p>
+                    <%= image_tag(event.away, class: 'items-list-events-match-away', width: '20%') %>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="more">
+  <div class="more-info">
+    <% @columns.each_with_index do |column, i| %>
+        <div class="tile">
+          <p><%= column.title %></p>
+          <% if i == @columns.length - 1 %>
+              <%= image_tag(column.image, class: 'sportfotbal', width: '100%') %>
+          <% else %>
+              <%= image_tag(column.image, width: '100%') %>
+          <% end %>
+          <p class="tile-text">Fotbalisté Hostivice hráli ve fotbalové sezóně 2016/2017 okresní přebor. Po 26 kolech Hostivice skončili na 13. místě. Zápasy A-mužstva se hrají každou sobotu od 17:00.</p>
+          <a href="https://souteze.fotbal.cz/turnaje/homepage/87439515-fa0c-4fd2-a4e5-9c8c6b344bf5" target="_blank">VÍCE INFO</a>
+        </div>
+    <% end %>
+  </div>
+</div>

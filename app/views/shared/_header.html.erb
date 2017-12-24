@@ -1,0 +1,54 @@
+<div id="loaded">
+  <div class="important-links">
+    <div class="important-links-events">
+      <ul class="important-links-list-find">
+        <li class="important-links-topbar-links-find"><a href="search.html">Hledat</a></li>
+      </ul>
+      <ul class="important-links-list">
+        <li class="important-links-topbar-links"><a target="_blank" href="calendar.html">Kalendář</a></li>
+        <li class="important-links-topbar-links"><a href="contact.html">Kontakty</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="menu"  class="website-nav">
+    <div class="website-nav-logo">
+        <%= link_to root_path, class: 'website-nav-logo-href' do %>
+          <img class="website-nav-logo-image" src="http://fotbalhostivice.cz/img/logo.png">
+        <% end %>
+      <ul class="website-nav-menu-links">
+        <li class="website-nav-menu-link">
+          <%= link_to 'TJ Hostivice', root_path %>
+        </li>
+      </ul>
+    </div>
+    <div class="website-nav-menu">
+      <ul class="website-nav-menu-links" id="myTopnav">
+        <li class="website-nav-menu-link"><%= link_to 'Novinky', articles_path %></li>
+        <li class="website-nav-menu-link"><a href="teams.html">Mužstva</a></li>
+        <li class="website-nav-menu-link"><a href="fotogalerie.html">Fotogalerie</a></li>
+        <li class="website-nav-menu-link"><a href="dormitory.html">Ubytovna</a></li>
+        <li class="icon">
+          <a href="javascript:void(0);" class="icon-menu" style="font-size:20px;" onclick="mobileMenu()">MENU</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="mobile" class="website-nav-menu-mobile">
+    <div class="website-nav-logo-mobile">
+      <a class="website-nav-logo-href-mobile" href="index.html">
+        <img class="website-nav-logo-image-mobile" src="http://fotbalhostivice.cz/img/logo.png">
+      </a>
+      <a class="website-nav-logo-href-name-mobile" href="index.html">TJ Hostivice</a>
+      <a class="website-nav-logo-href-name-mobile-close" onclick="mobileMenu()"><b>X</b></a>
+    </div>
+
+    <div class="mobile-items">
+      <a href="news.html">Novinky</a>
+      <a href="teams.html">Mužstva</a>
+      <a href="fotogalerie.html">Fotogalerie</a>
+      <a href="dormitory.html">Ubytovna</a>
+    </div>
+  </div>
+</div>

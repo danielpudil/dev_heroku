@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @column.title %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @column.image %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= @column.text %>
+</p>
+
+<%= link_to 'Edit', edit_column_path(@column) %> |
+<%= link_to 'Back', columns_path %>

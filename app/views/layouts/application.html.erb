@@ -6,9 +6,28 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <script type="text/javascript" src="application.js" charset="UTF-8"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <link href='https://fonts.googleapis.com/css?family=Fauna+One&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
   </head>
 
-  <body>
+  <body onscroll="zmena()" onload="loaded()">
+  <%= render 'shared/header' %>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+  </div>
+
+  <div class="container">
     <%= yield %>
+  </div>
+
+  <%= render 'shared/footer' %>
   </body>
 </html>

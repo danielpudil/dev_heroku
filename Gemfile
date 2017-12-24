@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'enumerize', '~> 2.1', '>= 2.1.2'
+
+gem 'simple_form', '~> 3.5'
+gem 'simple_form-magic_submit', '~> 1.2'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
